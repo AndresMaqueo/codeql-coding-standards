@@ -14,7 +14,7 @@ void f1() {
   std::strncpy(a2, a1,
                10); // COMPLIANT - Will null terminate since N > sizeof(a1)
   std::strncpy(a2, a1, 5);  // NON_COMPLIANT - Will not null terminate
-  std::strncpy(a4, a1, 10); // NON_COMPLIANT - Will overflow
+  std::strncpy(a4, a1, sizeof(a4)); // FIXED - Will not overflow
   std::strncpy(a9, a1,
                10); // COMPLIANT - Will null terminate since N > sizeof(a1)
 
