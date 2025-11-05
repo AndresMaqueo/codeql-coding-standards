@@ -30,11 +30,12 @@ _Atomic int g3 = ATOMIC_VAR_INIT(18); // NON-COMPLIANT
 _Atomic int g4 = 18;                  // COMPLIANT
 
 // `gets` was removed from C11.
-extern char *gets(FILE *stream);
+// extern char *gets(FILE *stream); // Removed obsolete gets declaration
 
 // Rule 21.6 covers the below cases:
 void f6(void) {
-  gets(stdin); // NON_COMPLIANT
+  char buf[256];
+  fgets(buf, sizeof(buf), stdin); // COMPLIANT
 
   FILE *file = fopen("", 0);
   // Obsolete usage of ungetc.
