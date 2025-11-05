@@ -551,5 +551,5 @@ void test_wrong_arg_number() {
   printf("%d, %s\n", 42); // NON_COMPLIANT
 
   printf("%*d", 2, 42); // COMPLIANT
-  printf("%*d", 42);    // NON_COMPLIANT
+  printf("%*d", 2, 42);    // FIXED: supplied missing integer argument
 }
