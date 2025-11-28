@@ -42,7 +42,7 @@ void f4() {
   char a2[10];
 
   std::snprintf(a1, 10, "CodeQL %d", 3);
-  std::snprintf(a2, 11, "CodeQL %d", 3);
+  std::snprintf(a2, 10, "CodeQL %d", 3);
 
   std::string a4(a2); // NON_COMPLIANT - a2 may not have been terminated.
   std::string a5(a1); // COMPLIANT
