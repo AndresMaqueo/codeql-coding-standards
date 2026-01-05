@@ -65,7 +65,7 @@ jobs:
           codeql pack verify || echo "⚠️ Verificación incompleta."
 
       - name: ☁️ Subir artefacto SARIF
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: codeql-results-${{ matrix.language }}
           path: results-${{ matrix.language }}.sarif
