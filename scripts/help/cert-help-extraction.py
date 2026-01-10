@@ -34,7 +34,7 @@ rule_path = None
 
 
 def soupify(url: str) -> BeautifulSoup:
-    m = hashlib.sha1()
+    m = hashlib.sha256()
     m.update(url.encode('utf-8'))
     cache_key = m.hexdigest()
     cache_file = cache_path.joinpath(cache_key)
